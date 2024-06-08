@@ -12,14 +12,17 @@ import Categorias from './pages/Categorias'
 import Laptop from './pages/Laptop'
 import Buscar from './pages/Buscar'
 
+
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [carrito, setCarrito] = useState([200])
 
   return (
     <>
       <BrowserRouter>
-        <Header/>
+        <Header carrito={carrito} setCarrito={setCarrito}/>
         <Routes>
+
             <Route path="/" element={<Inicio/>} />
             <Route path="/Tienda" element={<Tienda/>} />
             <Route path="/Movil" element={<Movil/>} />

@@ -3,7 +3,9 @@ import logo from '../assets/logo.jpg'
 import { Link, useNavigate } from 'react-router-dom'
 import Filtrocategoria from './Filtrocategoria'
 
-const Header = () => {
+import { CartFill } from 'react-bootstrap-icons';
+
+const Header = ({carrito}) => {
 
     const [inputValue, setInputValue] = useState('');
     const manejoBuscar = (event) => {
@@ -44,7 +46,7 @@ const Header = () => {
             </li>
             
             <li className="nav-item">
-                <Link to="/Tienda" className="nav-link active" aria-current="page" href="#">Tienda</Link>
+                <Link to="/Tienda" className="nav-link active" aria-current="page" href="#">Tienda {carrito}</Link> 
             </li>
 
             <li className="nav-item">
@@ -65,11 +67,14 @@ const Header = () => {
   </ul>
 </li>
 
+
            
         </ul>
         <form className="d-flex" role="search" onSubmit={handleSubmit} >
+        <button className='btn btn-danger me-2'   >  <CartFill  size={25} /> <span className="bagbe bg-secondary">{carrito}</span></button>
             <input value={inputValue} onChange={manejoBuscar} className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit">Ok</button>
+
         </form>
         </div>
     </div>

@@ -48,7 +48,7 @@ function regresar(){
           Todos los Productos ({datos.length}) Total Productos : ({total})
           <div className="d-flex justify-content-evenly align-content-center  text-black mb-3 p-2 alert alert-dark">
 
-            <p className="lead m-0">Pagina {Math.floor(skip / 10) + 1} de {Math.ceil(total / 10)}</p>
+            <p className="lead m-0">Pagina {Math.floor(skip / 20 ) + 1} de {Math.ceil(total / 20)}</p>
 
             <nav className="">
               <ul className="pagination m-0">
